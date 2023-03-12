@@ -1,13 +1,6 @@
-"""kata id: https://www.codewars.com/kata/514a024011ea4fb54200004b"""
-
-import re
-
 import pytest
 
-
-def domain_name(url: str) -> str:
-    match_domain = re.search(r'(?!w)(?!\.)[-0-9a-zA-Z]*(?=\.)', url)
-    return match_domain.group()
+from kyu5.url_domain_extractor import domain_name
 
 
 @pytest.mark.parametrize(
@@ -24,4 +17,3 @@ def domain_name(url: str) -> str:
 )
 def test_domain_test(url, domain):
     assert domain_name(url) == domain
-
