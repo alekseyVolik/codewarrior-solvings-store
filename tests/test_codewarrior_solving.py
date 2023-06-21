@@ -1,6 +1,7 @@
 import pytest
 
 from kyu5.url_domain_extractor import domain_name
+from kyu4.sum_of_intervals import sum_of_intervals
 
 
 @pytest.mark.parametrize(
@@ -17,3 +18,14 @@ from kyu5.url_domain_extractor import domain_name
 )
 def test_domain_test(url, domain):
     assert domain_name(url) == domain
+
+
+@pytest.mark.parametrize(
+    'intervals, _sum',
+    [
+        ([(1, 5)], 4),
+        ([1, 5], [10, 20], [1, 6], [16, 19], [5, 11], 19)
+    ]
+)
+def test_sum_of_intervals(intervals, _sum):
+    assert sum_of_intervals(intervals) == _sum
